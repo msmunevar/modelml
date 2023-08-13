@@ -15,6 +15,7 @@ train_data_path = tf.keras.utils.get_file(
 validation_data_path = tf.keras.utils.get_file(
     fname='triviaqa-verified-web-dev.json',
     origin='https://storage.googleapis.com/download.tensorflow.org/models/tflite/dataset/triviaqa-verified-web-dev.json')
+spec = model_spec.get('mobilebert_qa_squad')
 train_data = DataLoader.from_squad(train_data_path, spec, is_training=True)
 validation_data = DataLoader.from_squad(validation_data_path, spec, is_training=False)
 model = question_answer.create(train_data, model_spec=spec)
