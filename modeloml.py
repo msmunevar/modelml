@@ -11,10 +11,10 @@ from tflite_model_maker.question_answer import DataLoader
 
 train_data_path = tf.keras.utils.get_file(
     fname='triviaqa-web-train-8000.json',
-    origin='https://storage.googleapis.com/download.tensorflow.org/models/tflite/dataset/triviaqa-web-train-8000.json')
+    origin='https://github.com/ccasimiro88/TranslateAlignRetrieve/raw/master/SQuAD-es-v2.0/train-v2.0-es_small.json')
 validation_data_path = tf.keras.utils.get_file(
     fname='triviaqa-verified-web-dev.json',
-    origin='https://storage.googleapis.com/download.tensorflow.org/models/tflite/dataset/triviaqa-verified-web-dev.json')
+    origin='https://github.com/ccasimiro88/TranslateAlignRetrieve/raw/master/SQuAD-es-v2.0/dev-v2.0-es_small.json')
 spec = model_spec.get('mobilebert_qa_squad')
 train_data = DataLoader.from_squad(train_data_path, spec, is_training=True)
 validation_data = DataLoader.from_squad(validation_data_path, spec, is_training=False)
